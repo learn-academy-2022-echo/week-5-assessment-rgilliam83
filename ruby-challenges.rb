@@ -10,12 +10,20 @@ letter_o = 'o'
 letter_t = 't'
 # Expected output: ['tea', 'water', 'soda water']
 
+def finder(beverages_array,letter_o)
+    beverages_array.select { |word| word.include? letter_o }
+  end
+  p finder(beverages_array, letter_o)
 
 # -------------------2) Create a method that takes in a hash and returns one array with all the hash values at their own index and in alphabetical order. No nested arrays. Use the test variable provided.
 # HINT: Google 'ruby get rid of nested arrays'
 
 us_states = { northwest: ['Washington', 'Oregon', 'Idaho'], southwest: ['California', 'Arizona', 'Nevada'], notheast: ['Maine', 'New Hampshire', 'Vermont'] }
 # Expected output: ['Arizona', 'California', 'Idaho', 'Maine', 'Nevada', 'New Hampshire', 'Oregon', 'Vermont', 'Washington'] 
+
+new_array = us_states.sort 
+
+puts new_array
 
 
 # --------------------3a) Create a class called Bike that is initialized with a model, wheels, and current_speed. The default number of wheels is 2. The current_speed should start at 0. Create a bike_info method that returns a sentence with all the data from the bike object.
