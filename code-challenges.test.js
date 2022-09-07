@@ -19,6 +19,12 @@
 
 // a) Create a test with expect statements using the variables provided.
 
+//PSEUDO Code:
+    // create describe function. Call it codedMessage
+    // create the it function with the description "Create a function that takes in a string and returns a coded message. The coded message converts 'a' to 4, 'e'  to  3, 'i' to 1, and 'o' to 0."
+    // state desired outcomes with expect statements contained declared variables
+
+
 describe("codedMessage", () => {
     it("Create a function that takes in a string and returns a coded message. The coded message converts 'a' to 4, 'e' to 3, 'i' to 1, and 'o' to 0.", () => {
 
@@ -67,6 +73,14 @@ const secretCodeWord3 = "Eccentric"
 
 // b) Create the function that makes the test pass.
 
+// Pseudo Code:
+// define codedMessage function, setting string as paramater 
+// declare varriables arrayOne and arrayTwo
+// .split method will allow the string to switch to the expected array
+// use .map method to iterate through entire array
+// use if/else if/else conditional to replacement is needed as it pertains to each index
+//.join will return expected string
+
 const codedMessage = (string) => {
         let arrayOne= string.split('')
         let arrayTwo= arrayOne.map ((value) => {
@@ -84,6 +98,20 @@ const codedMessage = (string) => {
     })
    return arrayTwo.join('')
    }
+
+//    yarn run v1.22.19
+// warning package.json: No license field
+// $ /Users/learnacademy/Desktop/week-5-assessment-rgilliam83/node_modules/.bin/jest
+//  PASS  ./code-challenges.test.js
+//   codedMessage
+//     ✓ Create a function that takes in a string and returns a coded message. The coded message converts 'a' to 4, 'e' to 3, 'i' to 1, and 'o' to 0. (1 ms)
+
+// Test Suites: 1 passed, 1 total
+// Tests:       1 passed, 1 total
+// Snapshots:   0 total
+// Time:        0.173 s
+// Ran all test suites.
+// ✨  Done in 0.52s.
     
 
 // --------------------2) Create a function that takes in an array of words and a single letter and returns an array of all the words containing that particular letter.
