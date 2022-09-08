@@ -211,13 +211,105 @@ const allWords = (array, letter) => {
 
 // a) Create a test with expect statements using the variable provided.
 
-const hand1 = [5, 5, 5, 3, 3]
-// Expected output: true
-const hand2 = [5, 5, 3, 3, 4]
-// Expected output: false
-const hand3 = [5, 5, 5, 5, 4]
-// Expected output: false
-const hand4 = [7, 2, 7, 2, 7]
-// Expected output: true
+//PSEUDO Code:
+    // create describe function. Call it fullHouse
+    // create the it function with the description "Create a function that takes in an array of 5 numbers and determines whether or not the array is a 'full house'"
+    // state desired outcomes with expect statements contained declared variables
+
+
+describe("fullHouse", () =>{
+    it("Create a function that takes in an array of 5 numbers and determines whether or not the array is a 'full house'", () => {
+
+        const hand1 = [5, 5, 5, 3, 3]
+        // Expected output: true
+        const hand2 = [5, 5, 3, 3, 4]
+        // Expected output: false
+        const hand3 = [5, 5, 5, 5, 4]
+        // Expected output: false
+        const hand4 = [7, 2, 7, 2, 7]
+        // Expected output: true
+
+        expect(fullHouse(hand1)).toEqual(true)
+        expect(fullHouse(hand2)).toEqual(false)
+        expect(fullHouse(hand3)).toEqual(false)
+        expect(fullHouse(hand4)).toEqual(true)
+
+
+    })
+})
+
+
+// yarn run v1.22.19
+// warning package.json: No license field
+// $ /Users/learnacademy/Desktop/week-5-assessment-rgilliam83/node_modules/.bin/jest
+//  FAIL  ./code-challenges.test.js
+//   codedMessage
+//     ✓ Create a function that takes in a string and returns a coded message. The coded message converts 'a' to 4, 'e' to 3, 'i' to 1, and 'o' to 0. (1 ms)
+//   allWords
+//     ✓ Create a function that takes in an array of words and a single letter and returns an array of all the words containing that particular letter
+//   fullHouse
+//     ✕ Create a function that takes in an array of 5 numbers and determines whether or not the array is a 'full house'
+
+//   ● fullHouse › Create a function that takes in an array of 5 numbers and determines whether or not the array is a 'full house'
+
+//     ReferenceError: fullHouse is not defined
+
+//       223 |         // Expected output: true
+//       224 |
+//     > 225 |         expect(fullHouse(hand1)).toEqual(true)
+//           |         ^
+//       226 |         expect(fullHouse(hand2)).toEqual(false)
+//       227 |         expect(fullHouse(hand3)).toEqual(false)
+//       228 |         expect(fullHouse(hand4)).toEqual(true)
+
+//       at Object.expect (code-challenges.test.js:225:9)
+
+// Test Suites: 1 failed, 1 total
+// Tests:       1 failed, 2 passed, 3 total
+// Snapshots:   0 total
+// Time:        0.194 s
+// Ran all test suites.
+// error Command failed with exit code 1.
+// info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+
+
 
 // b) Create the function that makes the test pass.
+
+//create an object which holds the count of each of the value.
+//establish parameters for arr
+//generate for loop
+//set conditionals to return expected boolean response
+
+
+//To check full house
+const fullHouse = (arr) => {
+    let countObj = {}
+    for(let x of arr){
+      countObj[x] = (countObj[x] || 0) + 1;
+    }
+    let vals = Object.values(countObj);
+    if((vals[0] === 2 && vals[1] === 3) || (vals[1] === 2 && vals[0] === 3)){
+      return true;
+    }
+    return false;
+  }
+  
+//   yarn run v1.22.19
+// warning package.json: No license field
+// $ /Users/learnacademy/Desktop/week-5-assessment-rgilliam83/node_modules/.bin/jest
+//  PASS  ./code-challenges.test.js
+//   codedMessage
+//     ✓ Create a function that takes in a string and returns a coded message. The coded message converts 'a' to 4, 'e' to 3, 'i' to 1, and 'o' to 0. (1 ms)
+//   allWords
+//     ✓ Create a function that takes in an array of words and a single letter and returns an array of all the words containing that particular letter
+//   fullHouse
+//     ✓ Create a function that takes in an array of 5 numbers and determines whether or not the array is a 'full house'
+
+// Test Suites: 1 passed, 1 total
+// Tests:       3 passed, 3 total
+// Snapshots:   0 total
+// Time:        0.177 s, estimated 1 s
+// Ran all test suites.
+// ✨  Done in 0.79s.
+  
