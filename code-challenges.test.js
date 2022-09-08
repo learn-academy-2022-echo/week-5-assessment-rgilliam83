@@ -118,14 +118,94 @@ const codedMessage = (string) => {
 
 // a) Create a test with expects statement using the variable provided.
 
-const fruitArray = ["Mango", "Cherry", "Apricot", "Blueberry", "Peach", "Kiwi"]
+//PSEUDO Code:
+    // create describe function. Call it allWords
+    // create the it function with the description "Create a function that takes in an array of words and a single letter and returns an array of all the words containing that particular letter"
+    // state desired outcomes with expect statements contained declared variables
 
-const letterA = "a"
-// Expected output: ["Mango", "Apricot", "Peach"]
-const letterE = "e"
-// Expected output: ["Cherry", "Blueberry", "Peach"]
+
+describe("allWords", () => {
+    it("Create a function that takes in an array of words and a single letter and returns an array of all the words containing that particular letter", () => {
+
+        const fruitArray = ["Mango", "Cherry", "Apricot", "Blueberry", "Peach", "Kiwi"]
+        const letterA = "a"
+        // Expected output: ["Mango", "Apricot", "Peach"]
+        const letterE = "e"
+        // Expected output: ["Cherry", "Blueberry", "Peach"]
+
+        expect(allWords(fruitArray, letterA)).toEqual((["Mango", "Apricot", "Peach"]))
+        expect(allWords(fruitArray, letterE)).toEqual((["Cherry", "Blueberry", "Peach"]))
+
+    })
+})
+
+// yarn run v1.22.19
+// warning package.json: No license field
+// $ /Users/learnacademy/Desktop/week-5-assessment-rgilliam83/node_modules/.bin/jest
+//  FAIL  ./code-challenges.test.js
+//   codedMessage
+//     ✓ Create a function that takes in a string and returns a coded message. The coded message converts 'a' to 4, 'e' to 3, 'i' to 1, and 'o' to 0. (1 ms)
+//   allWoods
+//     ✕ Create a function that takes in an array of words and a single letter and returns an array of all the words containing that particular letter (1 ms)
+
+//   ● allWoods › Create a function that takes in an array of words and a single letter and returns an array of all the words containing that particular letter
+
+//     ReferenceError: allWords is not defined
+
+//       128 |         // Expected output: ["Cherry", "Blueberry", "Peach"]
+//       129 |
+//     > 130 |         expect(allWords(fruitArray)).toEqual((["Mango", "Apricot", "Peach"]))
+//           |         ^
+//       131 |         expect(allWords(fruitArray)).toEqual((["Cherry", "Blueberry", "Peach"]))
+//       132 |
+//       133 |     })
+
+//       at Object.expect (code-challenges.test.js:130:9)
+
+// Test Suites: 1 failed, 1 total
+// Tests:       1 failed, 1 passed, 2 total
+// Snapshots:   0 total
+// Time:        0.194 s
+// Ran all test suites.
+// error Command failed with exit code 1.
+// info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
 
 // b) Create the function that makes the test pass.
+
+// Pseudo code:
+    // declare allWords function
+    // establish expected parameters
+    // emplement .filter function to cycle through fruitArray 
+    // establish return using .include for values that contain specified letter
+
+fruitArray = ["Mango", "Cherry", "Apricot", "Blueberry", "Peach", "Kiwi"]
+
+letterA = "a"
+// # Expected output: ["Mango", "Apricot", "Peach"]
+letterE = "e"
+// # Expected output: ["Cherry", "Blueberry", "Peach"]
+
+const allWords = (array, letter) => {
+    return array.filter (word => {
+    return word.toLowerCase().includes(letter)
+   })
+  }
+
+//   yarn run v1.22.19
+// warning package.json: No license field
+// $ /Users/learnacademy/Desktop/week-5-assessment-rgilliam83/node_modules/.bin/jest
+//  PASS  ./code-challenges.test.js
+//   codedMessage
+//     ✓ Create a function that takes in a string and returns a coded message. The coded message converts 'a' to 4, 'e' to 3, 'i' to 1, and 'o' to 0. (1 ms)
+//   allWords
+//     ✓ Create a function that takes in an array of words and a single letter and returns an array of all the words containing that particular letter
+
+// Test Suites: 1 passed, 1 total
+// Tests:       2 passed, 2 total
+// Snapshots:   0 total
+// Time:        0.173 s, estimated 1 s
+// Ran all test suites.
+// ✨  Done in 0.56s.
 
 // --------------------3) Create a function that takes in an array of 5 numbers and determines whether or not the array is a “full house”. A full house is exactly one pair and one three of a kind.
 
