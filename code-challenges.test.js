@@ -280,7 +280,7 @@ describe("fullHouse", () =>{
 //establish parameters for arr
 //generate for loop that takes in argument which will interate through each index position of array
     //establish new varible countObj
-    //countObj will take in the index position of array adding each index to be evaluated together to determine full house is obtained
+    //countObj will take in the index position of array adding each index to be evaluated together to determine if full house is obtained
     //based on conditionals
 //set conditionals to return expected boolean response using higher order function .value
 //
