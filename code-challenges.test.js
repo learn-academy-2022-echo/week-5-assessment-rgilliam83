@@ -278,15 +278,19 @@ describe("fullHouse", () =>{
 
 //create an object which holds the count of each of the value.
 //establish parameters for arr
-//generate for loop
-//set conditionals to return expected boolean response
+//generate for loop that takes in argument which will interate through each index position of array
+    //establish new varible countObj
+    //countObj will take in the index position of array adding each index to be evaluated together to determine full house is obtained
+    //based on conditionals
+//set conditionals to return expected boolean response using higher order function .value
+//
 
 
 //To check full house
 const fullHouse = (arr) => {
     let countObj = {}
-    for(let x of arr){
-      countObj[x] = (countObj[x] || 0) + 1;
+    for(let i of arr){
+      countObj[i] = (countObj[i] || 0) + 1;
     }
     let vals = Object.values(countObj);
     if((vals[0] === 2 && vals[1] === 3) || (vals[1] === 2 && vals[0] === 3)){
