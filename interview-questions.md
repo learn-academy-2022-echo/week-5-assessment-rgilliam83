@@ -10,7 +10,7 @@ Then, research the question to expand on your answer. Even if you feel you have 
 
 Your answer:  A Hash is a collection of unique keys and their values. Also called associative arrays, they are similar to Arrays, but where an Array uses integers as its index, a Hash allows you to use any object type. Hashes enumerate their values in the order that the corresponding keys were inserted. Hashes allow an alternate syntax for keys that are symbols. Hashes have a default value that is returned when accessing keys that do not exist in the hash. If no default is set nil is used.
 
-Researched answer:  The order in which you traverse a hash by either key or value may seem arbitrary and will generally not be in the insertion order. If you attempt to access a hash with a key that does not exist, the method will return nil. In Ruby, Hash is a set of keyt value pairs. With a hash, the indexing is done with the help of keys of any object type. In Hash, the order of returning keys and their value by various iterators is arbitrary and will generally not be in the insertion order. The default value of Hashes is nil. When a user tries to access the keys which do not exist in the hash, then the nil value is returned. 
+Researched answer:  In Ruby, Hash's are a array of key value pairs. Hash's and arrays are similar, except for how the indexing is done. In Hash, the order of key value pairs are usually not in the order presented. The default value of Hashes is nil. When keys, that are not contained in the hash, are attempted to be accessed, then the nil value is returned.
 
 2. What is a gem?
 
