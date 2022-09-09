@@ -10,6 +10,10 @@ letter_o = 'o'
 letter_t = 't'
 # Expected output: ['tea', 'water', 'soda water']
 
+def finder(beverages_array,letter_o)
+    beverages_array.select { |word| word.include? letter_o }
+  end
+  p finder(beverages_array, letter_o)
 
 # -------------------2) Create a method that takes in a hash and returns one array with all the hash values at their own index and in alphabetical order. No nested arrays. Use the test variable provided.
 # HINT: Google 'ruby get rid of nested arrays'
@@ -17,10 +21,33 @@ letter_t = 't'
 us_states = { northwest: ['Washington', 'Oregon', 'Idaho'], southwest: ['California', 'Arizona', 'Nevada'], notheast: ['Maine', 'New Hampshire', 'Vermont'] }
 # Expected output: ['Arizona', 'California', 'Idaho', 'Maine', 'Nevada', 'New Hampshire', 'Oregon', 'Vermont', 'Washington'] 
 
+new_array = [["Washington", "Oregon", "Idaho"], ["California", "Arizona", "Nevada"], ["Maine", "New Hampshire", "Vermont"]].flatten
+
+def merge(new_array)
+  new_array.select{|word|word.include?}
+end
+p new_array.sort
+
 
 # --------------------3a) Create a class called Bike that is initialized with a model, wheels, and current_speed. The default number of wheels is 2. The current_speed should start at 0. Create a bike_info method that returns a sentence with all the data from the bike object.
 
 # Expected output example: 'The Trek bike has 2 wheels and is going 0 mph.'
+
+
+class Bike 
+  attr_accessor :model, :wheels, :current_speed
+  def initialize(model, wheels, current_speed)
+    @model = model
+    @wheels = 2
+    @current_speed = 0
+  end
+
+  def bike_info
+    "The #{@model} bike has #{@wheels} wheels and is going #{@current_speed} mph"
+  end
+
+
+
 
 
 
@@ -30,3 +57,18 @@ us_states = { northwest: ['Washington', 'Oregon', 'Idaho'], southwest: ['Califor
 # Expected output example: my_bike.pedal_faster(18) => 28
 # Expected output example: my_bike.brake(5) => 23
 # Expected output example: my_bike.brake(25) => 0
+
+def pedal_faster num
+  @current_speed += num
+end
+def brake num 
+  @current_speed -= num
+  [@current_speed, 0].max [].max
+end
+end
+
+p my_bike = Bike.new("Trek", 2, 0)
+p my_bike.pedal_faster(10)
+p my_bike.pedal_faster(18)
+p my_bike.brake(5)
+p my_bike.brake(25)
